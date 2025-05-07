@@ -4,10 +4,57 @@ const productsData = products;
 
 console.log(productsData);
 
+// Atividade 01
+function highPrice() {
+    const prices = productsData.map((product) => product.price)
+
+    const highValue = Math.max(...prices)
+
+    const productHighValue = productsData.find((product) => product.price === highValue)
+
+    console.log('Produto mais caro: ', productHighValue)
+}
+
+highPrice()
+
+// Atividade 02
+function arrInfo() {
+    const productsInfo = productsData.map(product => ({
+        title: product.title,
+        price: product.price,
+        discountPercentage: product.discountPercentage,
+        priceWithDiscount: product.price - (product.price * (product.discountPercentage / 100))
+    }))
+
+    console.log(productsInfo)
+}
+
+arrInfo()
+
+// Atividade 03
+function productsByCategory() {
+    const categories = productsData.map(product => product.category)
+
+    const categoriesWithoutRepeat = [...new Set(categories)]
+
+    const byCategory = categoriesWithoutRepeat.map(category => ({
+        category: category,
+        products: productsData
+            .filter(product => product.category === category)
+            .map(item => item.title)
+    }))
+
+    console.log(byCategory)
+}
+
+productsByCategory()
+
+//Atividade 04
+
 /**
- * 1 - Criar uma função que busca o produto mais caro, o retorno deve ser o produto inteiro (objeto);
+ * 1 - Criar uma função que busca o produto mais caro. O retorno deve ser o produto inteiro (objeto);
  *
- * 2 - Criar uma função que retorna um array com o nome dos produtos, quanto de desconto eles tem, o valor deles sem desconto e o valor com desconto
+ * 2 - Criar uma função que retorna um array com o nome dos produtos, quanto de desconto eles tem e o valor deles com desconto
  *   Exemplo:
  *      [
  *          ...
