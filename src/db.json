@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Estudo typescript",
+      "description": "Vamos estudar typescript para conseguir um emprego como dev",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "Estudo react com ts",
+      "description": "Vamos estudar react com ts para conseguir um emprego como dev",
+      "views": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "eu amo typescript",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "lado azul da força",
+      "postId": "1"
+    }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "name": "Matheus Rocha",
+      "age": 30,
+      "email": "matheus@email.com",
+      "commentId": "1"
+    },
+    {
+      "id": "2",
+      "name": "Lucas Silva",
+      "age": 25,
+      "email": "lucas@email.com",
+      "commentId": "2"
+    }
+  ]
+}
