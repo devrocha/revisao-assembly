@@ -1,9 +1,3 @@
-import { getPosts } from "./api/posts";
+import { isLogged } from "./modules/login";
 
-async function posts(){
-    const posts = await getPosts()
-
-    console.log(posts)
-}
-
-posts()
+isLogged(true)
