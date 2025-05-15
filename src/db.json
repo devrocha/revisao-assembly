@@ -4,41 +4,65 @@
       "id": "1",
       "title": "Estudo typescript",
       "description": "Vamos estudar typescript para conseguir um emprego como dev",
-      "views": 100
+      "like": 1,
+      "userId": "1",
+      "createAt": "15-05-2025",
+      "updateAt": "15-05-2025",
+      "deleteAt": "15-05-2025"
     },
     {
       "id": "2",
       "title": "Estudo react com ts",
       "description": "Vamos estudar react com ts para conseguir um emprego como dev",
-      "views": 200
+      "like": 1,
+      "userId": "2",
+      "createAt": "15-05-2025",
+      "updateAt": "15-05-2025",
+      "deleteAt": "15-05-2025"
     }
   ],
   "comments": [
     {
       "id": "1",
       "text": "eu amo typescript",
-      "postId": "1"
+      "postId": "1",
+      "userId": "1",
+      "createAt": "15-05-2025",
+      "updateAt": "15-05-2025",
+      "deleteAt": "15-05-2025"
     },
     {
       "id": "2",
       "text": "lado azul da força",
-      "postId": "1"
+      "postId": "2",
+      "userId": "2",
+      "createAt": "15-05-2025",
+      "updateAt": "15-05-2025",
+      "deleteAt": "15-05-2025"
     }
   ],
-  "user": [
+  "users": [
     {
       "id": "1",
       "name": "Matheus Rocha",
-      "age": 30,
       "email": "matheus@email.com",
-      "commentId": "1"
+      "password": "1234",
+      "age": 30,
+      "createAt": "15-05-2025",
+      "updateAt": "15-05-2025",
+      "deleteAt": "15-05-2025",
+      "image_url": ""
     },
     {
       "id": "2",
       "name": "Lucas Silva",
       "age": 25,
       "email": "lucas@email.com",
-      "commentId": "2"
+      "password": "1234",
+      "createAt": "15-05-2025",
+      "updateAt": "15-05-2025",
+      "deleteAt": "15-05-2025",
+      "image_url": ""
     }
   ]
 }
