@@ -7,11 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
   </head>
-  <body>
-    <!-- <div id="app"></div> -->
-    <h1 class="text-3xl font-bold">
-      Hello world!
-    </h1>
+
+  <body class="h-screen overflow-hidden">
+  <nav>
+    <div class="flex justify-around py-.5 border-b.1 border-gray-400">
+      <div class="flex space-x-5">
+        <div class="flex space-x-1 cursor-pointer">
+          <i data-lucide="notebook-pen"></i>
+          <span>Posts</span>
+        </div>
+        <div class="flex space-x-1 cursor-pointer">
+          <i data-lucide="user"></i>
+          <span>Perfil</span>
+        </div>
+      </div>
+      <i data-lucide="log-out" class="cursor-pointer"></i>
+    </div>
+  </nav>
+
+  <div id="app" class="w-full h-full bg-gray-100"></div>
+
     <script type="module" src="/src/main.ts"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script> lucide.createIcons();</script>
   </body>
 </html>
