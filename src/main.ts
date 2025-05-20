@@ -1,9 +1,11 @@
-import { getPosts } from "./api/posts";
+import { isLogged } from "./modules/login";
 
-async function posts(){
-    const posts = await getPosts()
+const signButton = document.getElementById('signInButton') as HTMLButtonElement
 
-    console.log(posts)
-}
-
-posts()
+isLogged(false)
+if (signButton) {
+    signButton.addEventListener('click', (event) => {
+      event.preventDefault(); // Impede o comportamento padrão do formulário
+      isLogged(true);
+    });
+  }
