@@ -1,17 +1,38 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link href="/src/style.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <!-- <div id="app"></div> -->
-    <h1 class="text-3xl font-bold">
-      Hello world!
-    </h1>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link href="/src/style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS</title>
+</head>
+
+<body class="h-screen overflow-hidden">
+  <nav id="navbar" class="bg-white flex justify-evenly items-center border-b border-gray-500 h-16">
+    <div class="items-center flex">
+      <div class="flex items-center px-5">
+        <i data-lucide="notebook-pen"></i>
+        <span>Posts</span>
+      </div>
+      <div class="flex items-center">
+        <i data-lucide="user"></i>
+        <span>Perfil</span>
+      </div>
+    </div>
+    <div class="items-center p-5">
+      <i data-lucide="log-out"></i>
+    </div>
+  </nav>
+  <div id="app" class="bg-gray-100 h-screen relative p-0 m-0">
+
+  </div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>

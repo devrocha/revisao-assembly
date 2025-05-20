@@ -1,9 +1,11 @@
-import { getPosts } from "./api/posts";
+import { isLogged } from './api/login';
+import { getUsers } from './api/user';
 
-async function posts(){
-    const posts = await getPosts()
+isLogged(false);
 
-    console.log(posts)
-}
+const users = await getUsers()
 
-posts()
+console.log(users)
+
+//localStorage.setItem('users', JSON.stringify(users[0]))
+//localStorage.getItem
