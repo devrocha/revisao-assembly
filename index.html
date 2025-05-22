@@ -1,16 +1,17 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link href="/src/style.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
 
-  <body class="h-screen overflow-hidden">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link href="/src/style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS</title>
+</head>
+
+<body class="h-screen overflow-hidden">
   <nav id="navbar">
-    <div class="flex justify-around py-.5 border-b.1 border-gray-400">
+    <div class="flex justify-around py-5 border-b-1 border-gray-400">
       <div class="flex space-x-5">
         <div class="flex space-x-1 cursor-pointer">
           <i data-lucide="notebook-pen"></i>
@@ -21,67 +22,16 @@
           <span>Perfil</span>
         </div>
       </div>
-      <i data-lucide="log-out" class="cursor-pointer"></i>
+      <div>
+        <i data-lucide="log-out" class="cursor-pointer"></i>
+      </div>
     </div>
   </nav>
 
-  <div id="signCard" class="w-full h-full bg-gray-100">
-    <!-- <div class="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <div class="max-w-md w-full bg-white p-8 rounded-2xl shadow-lg">
-        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Sign in</h2>
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-            <input type="email" name="email" id="email" required
-              class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
-          </div>
-          <div>
-            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-            <input type="password" name="password" id="password" required
-              class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
-          </div>
-          <div class="flex justify-end">
-            <a href="#" class="text-sm text-indigo-600 hover:underline">Forgot password?</a>
-          </div>
-          <button id="signButton"
-            class="w-full bg-indigo-600 text-white py-3 rounded-xl font-semibold hover:bg-indigo-700 transition">
-            Sign in
-          </button>
-        <p class="mt-6 text-center text-sm text-gray-600">
-          Don’t have an account?
-          <a href="#" class="text-indigo-600 font-medium hover:underline">Sign up</a>
-        </p>
-      </div> -->
-
-        
-        <div id="login-container" class="flex flex-col items-center justify-center h-[800px] bg-neutral-50">
-        <div class="w-[400px] p-8 bg-white rounded-lg shadow-lg">
-          <div class="text-center mb-8">
-            <i class="text-4xl text-neutral-700" data-fa-i2svg=""><svg class="svg-inline--fa fa-user" aria-hidden="true" focusable="false" data-prefix="far" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"></path></svg></i>
-            <h1 class="text-2xl mt-4">Login to Your Account</h1>
-          </div>
-          
-          <form class="space-y-4">
-            <div>
-              <label class="block text-sm text-neutral-700">Email</label>
-              <input type="email" class="w-full px-4 py-2 mt-1 border rounded-md focus:ring-2 focus:ring-neutral-500" placeholder="Enter your email">
-            </div>
-            
-            <div>
-              <label class="block text-sm text-neutral-700">Password</label>
-              <input type="password" class="w-full px-4 py-2 mt-1 border rounded-md focus:ring-2 focus:ring-neutral-500" placeholder="Enter your password">
-            </div>
-            
-            <button class="w-full py-2 px-4 bg-neutral-800 text-white rounded-md hover:bg-neutral-700">Sign In</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    
+  <div id="app" class="w-full h-full bg-gray-100 ">
     
   </div>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="/src/main.ts"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script> lucide.createIcons();</script>
-  </body>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
