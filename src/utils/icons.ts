@@ -2,7 +2,9 @@ import {
   createIcons,
   User,
   LogOut,
-  NotebookPen
+  NotebookPen,
+  Heart,
+  MessageCircle
 } from "lucide";
 
 export function icons() {
@@ -10,7 +12,9 @@ export function icons() {
     icons: {
       User,
       LogOut,
-      NotebookPen
+      NotebookPen,
+      Heart,
+      MessageCircle
     }
   });
 } 

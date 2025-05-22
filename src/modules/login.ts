@@ -1,21 +1,7 @@
 import { getUsers } from "../api/user"
-import { icons } from "../utils/icons"
+import { isLogged } from "../main"
 
-const nav = document.getElementById('navbar') as HTMLElement
 const app = document.getElementById('app') as HTMLElement
-
-export function isLogged(): void {
-  const user = JSON.parse(localStorage.getItem('user')!)
-  
-  if (user === null || user === undefined) {
-    nav.style.display = 'none'
-    loginPage()
-  } else {
-    nav.style.display = 'block'
-  }
-
-  icons()
-}
 
 export async function login(email: string, password: string) {
   const users = await getUsers()
@@ -32,7 +18,7 @@ export async function login(email: string, password: string) {
 
 export function loginPage() {
   app.innerHTML = `
-    <div class="flex items-center justify-center h-full">
+    <div class="flex items-center justify-center">
       <div class="m-auto w-[400px] p-8 bg-white rounded-lg shadow-lg">
         <div class="flex flex-col items-center mb-8">
           <i data-lucide="user" class="w-10 h-10 text-gray-700"></i>
