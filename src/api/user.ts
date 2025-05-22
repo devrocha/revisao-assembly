@@ -1,6 +1,8 @@
-import axiosIntance from './index'
+import type { User } from '../types/users'
+import axiosInstance from './index'
 
 export async function getUsers() {
-    const { data } = await axiosIntance.get('/users')
+    const { data } = await axiosInstance.get<User[]>('/users')
+
     return data
 }
