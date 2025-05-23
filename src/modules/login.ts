@@ -6,7 +6,7 @@ const app = document.getElementById('app') as HTMLElement
 
 export function isLogged(): void {
   const user = JSON.parse(localStorage.getItem('user')!)
-  
+
   if (user === null || user === undefined) {
     nav.style.display = 'none'
     loginPage()
@@ -17,18 +17,7 @@ export function isLogged(): void {
   icons()
 }
 
-export async function login(email: string, password: string) {
-  const users = await getUsers()
-  const user = users.find(user => user.email === email && user.password === password)
-  
-  if (user) {
-    localStorage.setItem('user', JSON.stringify(user))
-  } else {
-    window.alert('Usuário não cadastrado!')
-  }
 
-  isLogged()
-}
 
 export function loginPage() {
   app.innerHTML = `
