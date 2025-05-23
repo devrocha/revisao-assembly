@@ -1,20 +1,40 @@
-import { isLogged } from "./modules/login";
-import { getUsers } from "./api/user";
-import { icons } from "./utils/icons";
+import { loginPage } from "./modules/login"
+import { postsPage } from "./modules/posts"
+import { icons } from "./utils/icons"
 
-export async function login(email: string, password: string) {
-    const users = await getUsers()
-    const user = users.find(user => user.email === email && user.password === password)
+const nav = document.getElementById('navbar') as HTMLElement
+const divPosts = document.getElementById('div-posts') as HTMLElement
+const divPerfil = document.getElementById('div-perfil') as HTMLElement
+const divLogout = document.getElementById('div-logout') as HTMLElement
 
-    if (user) {
-        localStorage.setItem('user', JSON.stringify(user))
+export function isLogged(): void {
+    const user = JSON.parse(localStorage.getItem('user')!)
+
+    if (user === null || user === undefined) {
+        nav.style.display = 'none'
+        loginPage()
     } else {
-        window.alert('Usuário não cadastrado!')
+        nav.style.display = 'block'
+        postsPage()
     }
 
-    isLogged()
+    icons()
 }
 
 isLogged()
-// localStorage.setItem('user', JSON.stringify(users[0]))
-// const user = JSON.parse(localStorage.getItem('user'))
+
+divPosts.addEventListener('click', () => {
+    console.log('tela de posts')
+    postsPage()
+    icons()
+})
+
+divPerfil.addEventListener('click', () => {
+    console.log('tela de perfil')
+})
+
+divLogout.addEventListener('click', () => {
+    localStorage.removeItem('user')
+
+    isLogged()
+})

@@ -1,27 +1,22 @@
 import { getUsers } from "../api/user"
-import { icons } from "../utils/icons"
+import { isLogged } from "../main"
 
-const nav = document.getElementById('navbar') as HTMLElement
 const app = document.getElementById('app') as HTMLElement
 
-export function isLogged(): void {
-  const user = JSON.parse(localStorage.getItem('user')!)
+export async function login(email: string, password: string) {
+  const users = await getUsers()
+  const user = users.find(user => user.email === email && user.password === password)
 
-  if (user === null || user === undefined) {
-    nav.style.display = 'none'
-    loginPage()
+  if (user) {
+    localStorage.setItem('user', JSON.stringify(user))
   } else {
-    nav.style.display = 'block'
+    window.alert('Usuário não cadastrado!')
   }
 
-  icons()
-}
 
-
-
-export function loginPage() {
-  app.innerHTML = `
-    <div class="flex items-center justify-center h-full">
+  export function loginPage() {
+    app.innerHTML = `
+    <div class="flex items-center justify-center">
       <div class="m-auto w-[400px] p-8 bg-white rounded-lg shadow-lg">
         <div class="flex flex-col items-center mb-8">
           <i data-lucide="user" class="w-10 h-10 text-gray-700"></i>
@@ -43,13 +38,13 @@ export function loginPage() {
       </div>
     `
 
-  const email = document.getElementById('email') as HTMLInputElement
-  const password = document.getElementById('password') as HTMLInputElement
-  const loginBtn = document.getElementById('loginBtn') as HTMLButtonElement
+    const email = document.getElementById('email') as HTMLInputElement
+    const password = document.getElementById('password') as HTMLInputElement
+    const loginBtn = document.getElementById('loginBtn') as HTMLButtonElement
 
-  loginBtn.addEventListener('click', async (event) => {
-    event?.preventDefault()
+    loginBtn.addEventListener('click', async (event) => {
+      event?.preventDefault()
 
-    await login(email.value, password.value)
-  })
-}
+      await login(email.value, password.value)
+    })
+  }
