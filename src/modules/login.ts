@@ -12,10 +12,10 @@ export async function login(email: string, password: string) {
   } else {
     window.alert('Usuário não cadastrado!')
   }
+}
 
-
-  export function loginPage() {
-    app.innerHTML = `
+export function loginPage() {
+  app.innerHTML = `
     <div class="flex items-center justify-center">
       <div class="m-auto w-[400px] p-8 bg-white rounded-lg shadow-lg">
         <div class="flex flex-col items-center mb-8">
@@ -38,13 +38,13 @@ export async function login(email: string, password: string) {
       </div>
     `
 
-    const email = document.getElementById('email') as HTMLInputElement
-    const password = document.getElementById('password') as HTMLInputElement
-    const loginBtn = document.getElementById('loginBtn') as HTMLButtonElement
+  const email = document.getElementById('email') as HTMLInputElement
+  const password = document.getElementById('password') as HTMLInputElement
+  const loginBtn = document.getElementById('loginBtn') as HTMLButtonElement
 
-    loginBtn.addEventListener('click', async (event) => {
-      event?.preventDefault()
+  loginBtn.addEventListener('click', async (event) => {
+    event?.preventDefault()
 
-      await login(email.value, password.value)
-    })
-  }
+    await login(email.value, password.value)
+  })
+}
