@@ -1,5 +1,6 @@
 import { loginPage } from "./modules/login"
 import { postsPage } from "./modules/posts"
+import { profilePage } from "./modules/Profile"
 import { icons } from "./utils/icons"
 
 const nav = document.getElementById('navbar') as HTMLElement
@@ -31,6 +32,8 @@ divPosts.addEventListener('click', () => {
 
 divPerfil.addEventListener('click', () => {
     console.log('tela de perfil')
+    profilePage()
+    icons()
 })
 
 divLogout.addEventListener('click', () => {

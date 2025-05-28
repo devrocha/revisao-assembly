@@ -1,5 +1,6 @@
 import { getUsers } from "../api/user"
 import { isLogged } from "../main"
+import { profilePage } from "./Profile"
 
 const app = document.getElementById('app') as HTMLElement
 
@@ -9,6 +10,7 @@ export async function login(email: string, password: string) {
 
   if (user) {
     localStorage.setItem('user', JSON.stringify(user))
+    isLogged()
   } else {
     window.alert('Usuário não cadastrado!')
   }

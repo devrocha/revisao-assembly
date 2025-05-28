@@ -1,6 +1,12 @@
+import type { User } from './users'
 export interface Posts {
   id: string
   title: string
   description: string
-  views: number
+  like: number
+  userId: string
+  createdAt: string
+  updatedAt: string
+  deleteAt: string
+  user?: User
 }
