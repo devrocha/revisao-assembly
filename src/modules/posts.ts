@@ -1,28 +1,46 @@
+import { getPosts } from "../api/posts"
+import { icons } from "../utils/icons"
+
 const app = document.getElementById('app') as HTMLElement
 
-export function postsPage() {
-  app.innerHTML = `
+export async function postsPage() {
+
+    const posts = await getPosts(`_embed=user`)
+    console.log(posts)
+
+let postsHTML = ''
+for (const post of posts) {
+    postsHTML += `
     <div class="m-auto w-[400px] p-8 bg-white rounded-lg shadow-lg">
         <div class="flex">
-            <div class="border rounded-full">avatar</div>
+            <img class="border rounded-full w-20 h-20" src="${post.user?.image_url}"></img>
             <div class="flex flex-col">
-            <p>nome do usuário</p>
-            <p>data da postagem</p>
+            <p>${post.user?.name}</p>
+            <p>${post.createdAt}</p>
             </div>
         </div>
 
         <div>
-            corpo com texto
+            ${post.description}
         </div>
 
         <div class="flex justify-between">
-            <div>
-            <button class="cursor-pointer"><i data-lucide="heart"></i></button>
+            <div class="flex">
+            <button class="cursor-pointer flex">
+            <i data-lucide="heart"></i>
+            <spn>${post.like}</spn>
+            </button>
             <button class="cursor-pointer"><i data-lucide="message-circle"></i></button>
             </div>
             <button>
             show comments
             </button>
         </div>
-        </div>`
+
+    </div>`
+    
+    }
+    app.innerHTML = postsHTML
+    icons()
 }
+

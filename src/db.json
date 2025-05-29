@@ -51,7 +51,7 @@
       "createAt": "15-05-2025",
       "updateAt": "15-05-2025",
       "deleteAt": "15-05-2025",
-      "image_url": ""
+      "image_url": "https://picsum.photos/200"
     },
     {
       "id": "2",
@@ -62,7 +62,7 @@
       "createAt": "15-05-2025",
       "updateAt": "15-05-2025",
       "deleteAt": "15-05-2025",
-      "image_url": ""
+      "image_url": "https://picsum.photos/250"
     }
   ]
 }
