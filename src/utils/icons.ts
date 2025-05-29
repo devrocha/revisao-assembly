@@ -4,7 +4,8 @@ import {
   LogOut,
   NotebookPen,
   Heart,
-  MessageCircle
+  MessageCircle,
+  SquarePen
 } from "lucide";
 
 export function icons() {
@@ -14,7 +15,8 @@ export function icons() {
       LogOut,
       NotebookPen,
       Heart,
-      MessageCircle
+      MessageCircle,
+      SquarePen
     }
   });
 } 

@@ -1,5 +1,6 @@
 import { loginPage } from "./modules/login"
 import { postsPage } from "./modules/posts"
+import { userPage } from "./modules/user"
 import { icons } from "./utils/icons"
 
 const nav = document.getElementById('navbar') as HTMLElement
@@ -9,13 +10,13 @@ const divLogout = document.getElementById('div-logout') as HTMLElement
 
 export function isLogged(): void {
     const user = JSON.parse(localStorage.getItem('user')!)
-
+    
     if (user === null || user === undefined) {
         nav.style.display = 'none'
         loginPage()
     } else {
         nav.style.display = 'block'
-        postsPage()
+        userPage()
     }
 
     icons()
@@ -23,14 +24,12 @@ export function isLogged(): void {
 
 isLogged()
 
-divPosts.addEventListener('click', () => {
-    console.log('tela de posts') 
+divPosts.addEventListener('click', () => { 
     postsPage()
-    icons()
 })
 
 divPerfil.addEventListener('click', () => {
-    console.log('tela de perfil')
+   userPage()
 })
 
 divLogout.addEventListener('click', () => {

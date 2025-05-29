@@ -27,7 +27,7 @@ export async function postsPage() {
                     <div class="flex">
                         <button id="btnLike-${post.id}" class="cursor-pointer flex">
                             <i data-lucide="heart"></i>
-                            <span>${post.like}</span>
+                            <span id="likeQnt-${post.id}">${post.like}</span>
                         </button>
                         <button class="cursor-pointer"><i data-lucide="message-circle"></i></button>
                     </div>
@@ -37,16 +37,15 @@ export async function postsPage() {
                 </div>
             </div>
         `
-
     }
 
     for (const post of posts) {
         const btnLike = document.getElementById(`btnLike-${post.id}`) as HTMLButtonElement
-
         btnLike.addEventListener('click', async () => {
-            await newLike(post.id, post.like + 1)
+            const likeQnt = document.getElementById(`likeQnt-${post.id}`) as HTMLSpanElement
+            likeQnt.innerText = (post.like + 1).toString()
 
-            postsPage()
+            await newLike(post.id, post.like + 1)
         })
     }
 
