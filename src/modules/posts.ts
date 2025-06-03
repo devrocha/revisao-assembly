@@ -1,5 +1,6 @@
 import { getPosts } from "../api/posts"
 import { icons } from "../utils/icons"
+import { newLike } from "../api/posts"
 
 const app = document.getElementById('app') as HTMLElement
 
@@ -26,21 +27,31 @@ for (const post of posts) {
 
         <div class="flex justify-between">
             <div class="flex">
-            <button class="cursor-pointer flex">
-            <i data-lucide="heart"></i>
-            <spn>${post.like}</spn>
-            </button>
-            <button class="cursor-pointer"><i data-lucide="message-circle"></i></button>
+                <button id="btnLike-${post.id}" class="cursor-pointer flex">
+                    <i data-lucide="heart"></i>
+                    <span id="likeQnt-${post.id}">${post.like}</span>
+                </button>
+                <button class="cursor-pointer"><i data-lucide="message-circle"></i></button>
             </div>
-            <button>
+                <button>
             show comments
-            </button>
+                </button>
         </div>
 
     </div>`
     
     }
     app.innerHTML = postsHTML
+    for (const post of posts) {
+        const btnLike = document.getElementById(`btnLike-${post.id}`) as HTMLButtonElement
+        btnLike.addEventListener('click', async () => {
+            const likeQnt = document.getElementById(`btnQnt-${post.id}`) as HTMLSpanElement
+            await newLike(post.id, post.like + 1)
+            likeQnt.innerText = (post.like + 1).toString()
+
+        })
+    }
+    
     icons()
 }
 
