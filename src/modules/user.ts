@@ -1,3 +1,4 @@
+import { updateUser } from "../api/user"
 import type { User } from "../types/users"
 import { icons } from "../utils/icons"
 
@@ -51,8 +52,23 @@ export function userPage() {
         saveBtn.disabled = false
     })
 
-    saveBtn.addEventListener('click', () => {
+    saveBtn.addEventListener('click', async () => {
+        const name = inputName.value
+        const age = Number(inputAge.value)
 
+        const updateUserObject = {
+            ...user,
+            name,
+            age
+        }
+
+        localStorage.setItem('user', JSON.stringify(updateUserObject))
+
+        await updateUser(user.id, updateUserObject)
+        disableInput(inputName)
+        disableInput(inputAge)
+
+        saveBtn.disabled = true
     })
 
     icons()
@@ -62,4 +78,11 @@ function enableInput(input: HTMLInputElement) {
     input.style.border = 'solid 1px'
     input.style.padding = '0 4px'
     input.disabled = false
+}
+
+function disableInput(input: HTMLInputElement) {
+    input.style.border = 'none'
+    input.style.padding = '0'
+    input.disabled = true
+
 }
